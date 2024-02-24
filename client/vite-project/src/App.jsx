@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import Main from "./components/Main";
+import Signup from "./components/Signup";
+import  Login  from "./components/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -10,22 +12,24 @@ import store from "./redux/store";
 function App() {
   return (
     <>
-    <Provider store={store}>
+  
 
       <BrowserRouter>
       <div className="flex flex-col">
 
         <Navbar />
-        <div className="h-screen dark:bg-gray-800 text-white flex justify-center items-center ">
+        <div className="h-fit p-8 min-h-screen dark:bg-gray-800 text-white flex justify-center items-center ">
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
         <Footer />
       </div>
       </BrowserRouter>
-    </Provider>
+    
     </>
   );
 }
